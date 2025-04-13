@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Domain - AIL</title>
+	<link rel="icon" href="{{ url_for('static', filename='image/ail-icon.png') }}">
+	<!-- Core CSS -->
+	<link href="{{ url_for('static', filename='css/bootstrap4.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/daterangepicker.min.css') }}" rel="stylesheet">
+	<!-- JS -->
+	<script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/moment.min.js') }}"></script>
+ 	<script src="{{ url_for('static', filename='js/jquery.daterangepicker.min.js') }}"></script>
+
+    <style>
+        .card-columns {
+            column-count: 4;
+        }
+    </style>
+
+</head>
+<body>
+
+	{% include 'nav_bar.html' %}
+
+	<div class="container-fluid">
+		<div class="row">
+
+			{% include 'crawler/menu_sidebar.html' %}
+
+			<div class="col-12 col-lg-10" id="core_content">
+
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+
+                        {% with domain_type=dict_data['domain_type'], date_from=dict_data['date_from'], date_to=dict_data['date_to'], domain_type=domain_type%}
+                            {% include 'domains/filter_domains.html' %}
+                        {% endwith %}
+                    </div>
+                    <div class="col-12 col-xl-6">
+
+                        <div class="my-3">
+                            {% include 'objects/image/block_blur_img_slider.html' %}
+                        </div>
+
+                    </div>
+                </div>
+
+
+                {% with l_dict_domains=dict_data['list_elem'], bootstrap_label=bootstrap_label %}
+                    {% include 'domains/card_img_domain.html' %}
+                {% endwith %}
+
+                <br>
+                <br>
+
+                {%if 'list_elem' in dict_data%}
+                    {% with page=dict_data['page'], nb_page_max=dict_data['nb_pages'],  nb_first_elem=dict_data['nb_first_elem'], nb_last_elem=dict_data['nb_last_elem'], nb_all_elem=dict_data['nb_all_elem'] %}
+                        {% set object_name="domain" %}
+                        {%if domain_type=='onion'%}
+                            {% set target_url=url_for('crawler_splash.domains_explorer_onion') + "?domain_type=onion" %}
+                        {%else%}
+                            {% set target_url=url_for('crawler_splash.domains_explorer_web') + "?domain_type=regular" %}
+                        {%endif%}
+                        {%if 'date_from' in dict_data %}
+                            {% set target_url = target_url + '&date_from=' + dict_data['date_from'] + '&date_to=' + dict_data['date_to'] %}
+                        {%endif%}
+                        {% include 'pagination.html' %}
+                    {% endwith %}
+                {%endif%}
+
+
+
+			</div>
+		</div>
+	</div>
+</body>
+
+
+<script>
+  $(document).ready(function(){
+    $('#nav_title_domains_explorer').removeClass("text-muted");
+
+    $('#date-range-from').dateRangePicker({
+  			separator : ' to ',
+  			getValue: function(){
+  					if ($('#date-range-from-input').val() && $('#date-range-to-input').val() )
+  							return $('#date-range-from-input').val() + ' to ' + $('#date-range-to-input').val();
+  					else
+  							return '';
+  					},
+  					setValue: function(s,s1,s2){
+  							$('#date-range-from-input').val(s1);
+  							$('#date-range-to-input').val(s2);
+  					}
+  	});
+  	$('#date-range-to').dateRangePicker({
+  			separator : ' to ',
+  			getValue: function(){
+  					if ($('#date-range-from-input').val() && $('#date-range-to-input').val() )
+  							return $('#date-range-from-input').val() + ' to ' + $('#date-range-to-input').val();
+  					else
+  							return '';
+  			},
+  			setValue: function(s,s1,s2){
+  					$('#date-range-from-input').val(s1);
+  					$('#date-range-to-input').val(s2);
+  			}
+  	});
+  });
+
+function toggle_sidebar(){
+	if($('#nav_menu').is(':visible')){
+		$('#nav_menu').hide();
+		$('#side_menu').removeClass('border-right')
+		$('#side_menu').removeClass('col-lg-2')
+		$('#core_content').removeClass('col-lg-10')
+	}else{
+		$('#nav_menu').show();
+		$('#side_menu').addClass('border-right')
+		$('#side_menu').addClass('col-lg-2')
+		$('#core_content').addClass('col-lg-10')
+	}
+}
+</script>
+
+</html>
