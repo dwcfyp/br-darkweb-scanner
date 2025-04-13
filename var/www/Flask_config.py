@@ -78,7 +78,7 @@ UPLOAD_FOLDER = os.path.join(os.environ['AIL_FLASK'], 'submitted')
 PASTES_FOLDER = os.path.join(os.environ['AIL_HOME'], config_loader.get_config_str("Directories", "pastes")) + '/'
 SCREENSHOT_FOLDER = config_loader.get_files_directory('screenshot')
 
-REPO_ORIGIN = 'https://github.com/ail-project/ail-framework.git'
+REPO_ORIGIN = 'https://github.com/ail-project/bitranger-scanner.git'
 
 max_dashboard_logs = int(config_loader.get_config_str("Flask", "max_dashboard_logs"))
 

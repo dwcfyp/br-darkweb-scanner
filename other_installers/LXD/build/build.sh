@@ -132,10 +132,10 @@ createAILContainer(){
         exit 1
     fi
     lxc exec "$AIL_CONTAINER" -- bash -c "echo 'ail ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/ail"
-    lxc exec "$AIL_CONTAINER" --cwd=/home/ail -- sudo -u ail bash -c "git clone https://github.com/ail-project/ail-framework.git"
-    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/ail-framework -- sudo -u ail bash -c "./installing_deps.sh"
-    lxc exec "$AIL_CONTAINER" -- sed -i '/^\[Flask\]/,/^\[/ s/host = 127\.0\.0\.1/host = 0.0.0.0/' /home/ail/ail-framework/configs/core.cfg
-    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/ail-framework/bin -- sudo -u ail bash -c "./LAUNCH.sh -l"
+    lxc exec "$AIL_CONTAINER" --cwd=/home/ail -- sudo -u ail bash -c "git clone https://github.com/ail-project/bitranger-scanner.git"
+    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/bitranger-scanner -- sudo -u ail bash -c "./installing_deps.sh"
+    lxc exec "$AIL_CONTAINER" -- sed -i '/^\[Flask\]/,/^\[/ s/host = 127\.0\.0\.1/host = 0.0.0.0/' /home/ail/bitranger-scanner/configs/core.cfg
+    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/bitranger-scanner/bin -- sudo -u ail bash -c "./LAUNCH.sh -l"
     lxc exec "$AIL_CONTAINER" -- sed -i "/^\$nrconf{restart} = 'a';/s/.*/#\$nrconf{restart} = 'i';/" /etc/needrestart/needrestart.conf
 }
 
@@ -376,7 +376,7 @@ lxc network create "$NETWORK_NAME"
 
 if $AIL; then
     createAILContainer
-    createLXDImage "$AIL_CONTAINER" "$AIL_IMAGE" "/home/ail/ail-framework" "ail"
+    createLXDImage "$AIL_CONTAINER" "$AIL_IMAGE" "/home/ail/bitranger-scanner" "ail"
 fi
 
 if $LACUS; then

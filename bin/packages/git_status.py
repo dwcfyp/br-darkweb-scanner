@@ -21,7 +21,7 @@ TERMINAL_BLUE = '\33[94m'
 TERMINAL_BLINK = '\33[6m'
 TERMINAL_DEFAULT = '\033[0m'
 
-REPO_ORIGIN = 'https://github.com/ail-project/ail-framework.git'
+REPO_ORIGIN = 'https://github.com/ail-project/bitranger-scanner.git'
 
 # set defaut_remote
 def set_default_remote(new_origin_url, verbose=False):
@@ -228,6 +228,6 @@ if __name__ == "__main__":
     get_last_commit_id_from_local(verbose=True)
     get_last_tag_from_local(verbose=True)
     get_current_branch(verbose=True)
-    print(is_fork('https://github.com/ail-project/ail-framework.git'))
+    print(is_fork('https://github.com/ail-project/bitranger-scanner.git'))
     print(is_working_directory_clean())
     get_last_tag_from_remote(verbose=True)

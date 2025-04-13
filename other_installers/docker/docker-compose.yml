@@ -10,7 +10,7 @@ services:
       timeout: 10s
       retries: 5
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./configs:/opt/AIL/configs:ro
   crawler:
@@ -21,7 +21,7 @@ services:
       - onion
       - "8050"
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./CRAWLED_SCREENSHOT/:/opt/AIL/CRAWLED_SCREENSHOT
       - ./PASTES/:/opt/AIL/PASTES
@@ -33,7 +33,7 @@ services:
       - /opt/AIL/var/www/Flask_server.py
     ports:
       - "7000:7000"
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./CRAWLED_SCREENSHOT/:/opt/AIL/CRAWLED_SCREENSHOT
       - ./PASTES/:/opt/AIL/PASTES
@@ -52,7 +52,7 @@ services:
       - -l
       - /opt/AIL/logs/
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./configs:/opt/AIL/configs:ro
   log-script:
@@ -67,7 +67,7 @@ services:
       - -l
       - /opt/AIL/logs/
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./configs:/opt/AIL/configs:ro
   pystemon:
@@ -76,7 +76,7 @@ services:
     entrypoint:
       - /opt/pystemon/pystemon.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./pystemon/archives:/opt/pystemon/archive
@@ -89,7 +89,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/feeder/pystemon-feeder.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./pystemon/archives:/opt/pystemon/archive
@@ -101,7 +101,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/launch_queues.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -115,7 +115,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-    image: ail-framework
+    image: bitranger-scanner
     network_mode: service:flask
     volumes:
       - ./configs:/opt/AIL/configs:ro
@@ -129,7 +129,7 @@ services:
       timeout: 10s
       retries: 5
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./configs:/opt/AIL/configs:ro
   redis-mixer-cache:
@@ -141,7 +141,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-    image: ail-framework
+    image: bitranger-scanner
     network_mode: service:flask
     volumes:
       - ./configs:/opt/AIL/configs:ro
@@ -151,7 +151,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/alertHandler.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -162,7 +162,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/ApiKey.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -173,7 +173,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/BankAccount.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -184,7 +184,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Bitcoin.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -195,7 +195,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Categ.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -206,7 +206,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Credential.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -217,7 +217,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/CreditCards.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -228,7 +228,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Curve.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -239,7 +239,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/CurveManageTopSets.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -250,7 +250,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/CveModule.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -261,7 +261,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Decoder.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./HASHS:/opt/AIL/HASHS
       - ./PASTES/:/opt/AIL/PASTES
@@ -273,7 +273,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/DomClassifier.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -284,7 +284,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Duplicates.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -295,7 +295,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Global.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -306,7 +306,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Indexer.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./indexdir:/opt/AIL/indexdir
@@ -318,7 +318,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Keys.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -329,7 +329,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/LibInjection.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -340,7 +340,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Lines.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -351,7 +351,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Mail.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -362,7 +362,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/MISP_The_Hive_feeder.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -373,7 +373,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Mixer.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -384,7 +384,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/ModuleStats.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -395,7 +395,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Onion.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -406,7 +406,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Phone.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -417,7 +417,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/RegexForTermsFrequency.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -428,7 +428,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Release.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -439,7 +439,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/SentimentAnalysis.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -450,7 +450,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/SetForTermsFrequency.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -461,7 +461,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/SQLInjectionDetection.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -472,7 +472,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/submit_paste.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -483,7 +483,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Tags.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -494,7 +494,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Tokenize.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -505,7 +505,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/Web.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro
@@ -516,7 +516,7 @@ services:
     entrypoint:
       - /opt/AIL/bin/WebStats.py
     network_mode: service:flask
-    image: ail-framework
+    image: bitranger-scanner
     volumes:
       - ./PASTES/:/opt/AIL/PASTES
       - ./bin/packages/config.cfg:/opt/AIL/bin/packages/config.cfg:ro

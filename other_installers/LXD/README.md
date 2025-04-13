@@ -32,7 +32,7 @@ The following options are available:
 
 
 ## Configuration
-If you installed Lacus, you can configure AIL to use it as a crawler. For further information, please refer to the [HOWTO.md](https://github.com/ail-project/ail-framework/blob/master/HOWTO.md)
+If you installed Lacus, you can configure AIL to use it as a crawler. For further information, please refer to the [HOWTO.md](https://github.com/ail-project/bitranger-scanner/blob/master/HOWTO.md)
 
 ## Using Images to run AIL
 If you want to use images to install AIL, you can download them from the ail-project [image website](https://images.ail-project.org/)
@@ -48,10 +48,10 @@ lxc launch <image_alias> <container_name>
 
 To log into the container you need to know the automatically generated password. You can get it with the following command:
 ```bash
-lxc exec <container_name> --  bash -c "grep '^password=' /home/ail/ail-framework/DEFAULT_PASSWORD | cut -d'=' -f2"
+lxc exec <container_name> --  bash -c "grep '^password=' /home/ail/bitranger-scanner/DEFAULT_PASSWORD | cut -d'=' -f2"
 ```
 
-If you also want to use Lacus, you can do the same with the Lacus image. After that, you can configure AIL to use Lacus as a crawler. For further information, please refer to the [HOWTO.md](https://github.com/ail-project/ail-framework/blob/master/HOWTO.md).
+If you also want to use Lacus, you can do the same with the Lacus image. After that, you can configure AIL to use Lacus as a crawler. For further information, please refer to the [HOWTO.md](https://github.com/ail-project/bitranger-scanner/blob/master/HOWTO.md).
 
 ## Building the images locally
 If you want to build the images locally, you can use the `build.sh` script:

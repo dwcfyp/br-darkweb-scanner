@@ -428,8 +428,8 @@ if __name__ == "__main__":
     TERMINAL_BLINK = '\33[6m'
     TERMINAL_DEFAULT = '\033[0m'
 
-    AIL_REPO = 'https://github.com/ail-project/ail-framework'
-    AIL_REPO_NAME = 'ail-project/ail-framework.git'
+    AIL_REPO = 'https://github.com/ail-project/bitranger-scanner'
+    AIL_REPO_NAME = 'ail-project/bitranger-scanner.git'
     OLD_AIL_REPO = 'https://github.com/CIRCL/AIL-framework.git'
 
     configfile = os.path.join(os.environ['AIL_HOME'], 'configs/update.cfg')

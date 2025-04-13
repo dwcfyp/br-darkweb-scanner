@@ -139,7 +139,7 @@
 }
 
 \author{\Large{Alexandre Dulaunoy}\\ \scriptsize{alexandre.dulaunoy@circl.lu}\\ \large{Aurélien Thirion}\\ \scriptsize{aurelien.thirion@circl.lu}\\}
-\title{AIL Framework for Analysis of Information Leaks}
+\title{BitRanger: Darkweb Scanner for Analysis of Information Leaks}
 \subtitle{data mining - website and darkweb correlation}
 \institute{info@circl.lu}
 \date{\today}
@@ -184,9 +184,9 @@ ation-leaks-analysis-and-gdpr.pdf}}.
     \end{itemize}
 \end{frame}
 
-\section{AIL Framework}
+\section{BitRanger: Darkweb Scanner}
 \begin{frame}
-    \frametitle{From a requirement to a solution: AIL Framework}
+    \frametitle{From a requirement to a solution: BitRanger: Darkweb Scanner}
     \large{History:}
     \begin{itemize}
         \item AIL initially started as an \textbf{internship project} (2014) to evaluate the feasibility to automate the analysis of (un)structured information to find leaks.
@@ -195,7 +195,7 @@ ation-leaks-analysis-and-gdpr.pdf}}.
 \end{frame}
 
 \begin{frame}
-    \frametitle{AIL Framework: A framework for Analysis of Information Leaks}
+    \frametitle{BitRanger: Darkweb Scanner: A framework for Analysis of Information Leaks}
     \begin{quote}
 "AIL is a modular framework to analyse potential information leaks from unstructured data sources."
     \end{quote}
@@ -467,7 +467,7 @@ response platforms.
 \section{Current capabilities}
 
 \begin{frame}
-    \frametitle{AIL Framework: Current capabilities}
+    \frametitle{BitRanger: Darkweb Scanner: Current capabilities}
     \begin{itemize}
         \item Extending AIL to add a new {\bf analysis module} can be done in 50 lines of Python
         \item The framework {\bf supports multi-processors/cores by default}. Any analysis module can be started multiple times to support faster processing during peak times or bulk import
@@ -477,7 +477,7 @@ response platforms.
 \end{frame}
 
 \begin{frame}
-    \frametitle{AIL Framework: Current features}
+    \frametitle{BitRanger: Darkweb Scanner: Current features}
     \begin{itemize}
         \item Extracting \textbf{credit cards numbers, credentials, phone numbers, ...}
         \item Extracting and validating potential \textbf{hostnames}
@@ -736,7 +736,7 @@ response platforms.
     \frametitle{Setting up AIL-Framework from source or virtual machine}
     \begin{tcblisting}{colback=black!85,coltext=green,listing only,
         title=Setting up AIL-Framework from source, fonttitle=\bfseries}
-git clone https://github.com/ail-project/ail-framework.git
+git clone https://github.com/ail-project/bitranger-scanner.git
 cd AIL-framework
 ./installing_deps.sh
 \end{tcblisting}

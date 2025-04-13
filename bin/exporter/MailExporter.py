@@ -131,8 +131,8 @@ class MailExporterTracker(MailExporter):
         if not description:
             description = tracker_name
 
-        subject = f'AIL Framework Tracker: {description}'
-        body = f"AIL Framework, New occurrence for {tracker_type} tracker: {tracker_name}\n"
+        subject = f'BitRanger: Darkweb Scanner Tracker: {description}'
+        body = f"BitRanger: Darkweb Scanner, New occurrence for {tracker_type} tracker: {tracker_name}\n"
         body += f'Object {obj.type}: {obj.id}\n'
 
         if matches:

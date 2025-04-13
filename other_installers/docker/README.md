@@ -15,16 +15,16 @@ curl https://get.docker.com | /bin/bash
 
 2. Type these commands to build the Docker image:
 ```bash
-git clone https://github.com/ail-project/ail-framework.git
+git clone https://github.com/ail-project/bitranger-scanner.git
 cd AIL-framework
 cp -r ./other_installers/docker/Dockerfile ./other_installers/docker/docker_start.sh ./other_installers/docker/pystemon ./
 cp ./configs/update.cfg.sample ./configs/update.cfg
 vim/nano ./configs/update.cfg (set auto_update to False)
-docker build --build-arg tz_buildtime=YOUR_GEO_AREA/YOUR_CITY -t ail-framework .
+docker build --build-arg tz_buildtime=YOUR_GEO_AREA/YOUR_CITY -t bitranger-scanner .
 ```
 3. To start AIL on port 7000, type the following command below:
 ```
-docker run -p 7000:7000 ail-framework
+docker run -p 7000:7000 bitranger-scanner
 ```
 
 4. To debug the running container, type the following command and note the container name or identifier:

@@ -1,15 +1,15 @@
 # AIL framework
 
-<img src="https://raw.githubusercontent.com/ail-project/ail-framework/master/var/www/static/image/ail-icon.png" height="400" />
+<img src="https://raw.githubusercontent.com/ail-project/bitranger-scanner/master/var/www/static/image/ail-icon.png" height="400" />
 
 <table>
 <tr>
   <td>Latest Release</td>
-  <td><a href="https://github.com/ail-project/ail-framework/releases/latest"><img src="https://img.shields.io/github/release/ail-project/ail-framework/all.svg"></a></td>
+  <td><a href="https://github.com/ail-project/bitranger-scanner/releases/latest"><img src="https://img.shields.io/github/release/ail-project/bitranger-scanner/all.svg"></a></td>
 </tr>
 <tr>
   <td>CI</td>
-  <td><a href="https://github.com/ail-project/ail-framework/actions/workflows/ail_framework_test.yml"><img src="https://github.com/ail-project/ail-framework/actions/workflows/ail_framework_test.yml/badge.svg"></a></td>
+  <td><a href="https://github.com/ail-project/bitranger-scanner/actions/workflows/ail_framework_test.yml"><img src="https://github.com/ail-project/bitranger-scanner/actions/workflows/ail_framework_test.yml/badge.svg"></a></td>
 </tr>
 <tr>
   <td>Gitter</td>
@@ -17,11 +17,11 @@
 </tr>
 <tr>
   <td>Contributors</td>
-  <td><img src="https://img.shields.io/github/contributors/ail-project/ail-framework.svg" /></td>
+  <td><img src="https://img.shields.io/github/contributors/ail-project/bitranger-scanner.svg" /></td>
 </tr>
 <tr>
   <td>License</td>
-  <td><img src="https://img.shields.io/github/license/ail-project/ail-framework.svg" /></td>
+  <td><img src="https://img.shields.io/github/license/ail-project/bitranger-scanner.svg" /></td>
 </tr>
 </table>
 
@@ -95,14 +95,14 @@ Allow easy creation and customization by extending an abstract class.
 To install the AIL framework, run the following commands:
 ```bash
 # Clone the repo first
-git clone https://github.com/ail-project/ail-framework.git
-cd ail-framework
+git clone https://github.com/ail-project/bitranger-scanner.git
+cd bitranger-scanner
 
 # For Debian and Ubuntu based distributions
 ./installing_deps.sh
 
 # Launch ail
-cd ~/ail-framework/
+cd ~/bitranger-scanner/
 cd bin/
 ./LAUNCH.sh -l
 ```
@@ -114,7 +114,7 @@ Requirement:
 
 ## Installation Notes
 
-For Lacus Crawler and LibreTranslate installation instructions (if you want to use those features), refer to the [HOWTO](https://github.com/ail-project/ail-framework/blob/master/HOWTO.md#crawler)
+For Lacus Crawler and LibreTranslate installation instructions (if you want to use those features), refer to the [HOWTO](https://github.com/ail-project/bitranger-scanner/blob/master/HOWTO.md#crawler)
 
 ## Starting AIL
 

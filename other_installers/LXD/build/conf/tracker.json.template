@@ -5,7 +5,7 @@
     "github": [
         {
             "name": "AIL",
-            "id": "ail-project/ail-framework",
+            "id": "ail-project/bitranger-scanner",
             "mode": "commits",
             "args": [
                 "--ail",

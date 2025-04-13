@@ -80,25 +80,25 @@ Available Importers:
    
 3. Install python dependencies inside the virtual environment:
 	```shell
-	cd ail-framework/
+	cd bitranger-scanner/
 	. ./AILENV/bin/activate
 	cd ../pystemon/
 	pip install -U -r requirements.txt
 	``` 
-4. Edit the configuration file ```ail-framework/configs/core.cfg```:
+4. Edit the configuration file ```bitranger-scanner/configs/core.cfg```:
 	- Modify the "pystemonpath" path accordingly.
 
-5. Launch ail-framework, pystemon and PystemonImporter.py (all within the virtual environment):
+5. Launch bitranger-scanner, pystemon and PystemonImporter.py (all within the virtual environment):
 	 - Option 1 (recommended): 
 		``` 
-		 ./ail-framework/bin/LAUNCH.sh -l #starts ail-framework
-		 ./ail-framework/bin/LAUNCH.sh -f #starts pystemon and the PystemonImporter.py
+		 ./bitranger-scanner/bin/LAUNCH.sh -l #starts bitranger-scanner
+		 ./bitranger-scanner/bin/LAUNCH.sh -f #starts pystemon and the PystemonImporter.py
 		```
      - Option 2 (may require two terminal windows): 
         ``` 
-        ./ail-framework/bin/LAUNCH.sh -l #starts ail-framework
+        ./bitranger-scanner/bin/LAUNCH.sh -l #starts bitranger-scanner
         ./pystemon/pystemon.py
-        ./ail-framework/bin/importer/PystemonImporter.py
+        ./bitranger-scanner/bin/importer/PystemonImporter.py
         ```
 
 ### File Importer `importer/FileImporter.py`:

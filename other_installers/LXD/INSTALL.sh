@@ -149,10 +149,10 @@ createAILContainer(){
         exit 1
     fi
     lxc exec "$AIL_CONTAINER" -- bash -c "echo 'ail ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/ail"
-    lxc exec "$AIL_CONTAINER" --cwd=/home/ail -- sudo -u ail bash -c "git clone https://github.com/ail-project/ail-framework.git"
-    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/ail-framework -- sudo -u ail bash -c "./installing_deps.sh"
-    lxc exec "$AIL_CONTAINER" -- sed -i '/^\[Flask\]/,/^\[/ s/host = 127\.0\.0\.1/host = 0.0.0.0/' /home/ail/ail-framework/configs/core.cfg
-    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/ail-framework/bin -- sudo -u ail bash -c "./LAUNCH.sh -l"
+    lxc exec "$AIL_CONTAINER" --cwd=/home/ail -- sudo -u ail bash -c "git clone https://github.com/ail-project/bitranger-scanner.git"
+    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/bitranger-scanner -- sudo -u ail bash -c "./installing_deps.sh"
+    lxc exec "$AIL_CONTAINER" -- sed -i '/^\[Flask\]/,/^\[/ s/host = 127\.0\.0\.1/host = 0.0.0.0/' /home/ail/bitranger-scanner/configs/core.cfg
+    lxc exec "$AIL_CONTAINER" --cwd=/home/ail/bitranger-scanner/bin -- sudo -u ail bash -c "./LAUNCH.sh -l"
     lxc exec "$AIL_CONTAINER" -- sed -i "/^\$nrconf{restart} = 'a';/s/.*/#\$nrconf{restart} = 'i';/" /etc/needrestart/needrestart.conf
 }
 
@@ -467,9 +467,9 @@ fi
 
 # Print info
 ail_ip=$(lxc list "$AIL_CONTAINER" --format=json | jq -r '.[0].state.network.eth0.addresses[] | select(.family=="inet").address')
-ail_email=$(lxc exec "$AIL_CONTAINER" -- bash -c "grep '^email=' /home/ail/ail-framework/DEFAULT_PASSWORD | cut -d'=' -f2")
-ail_password=$(lxc exec "$AIL_CONTAINER" -- bash -c "grep '^password=' /home/ail/ail-framework/DEFAULT_PASSWORD | cut -d'=' -f2")
-ail_API_Key=$(lxc exec "$AIL_CONTAINER" -- bash -c "grep '^API_Key=' /home/ail/ail-framework/DEFAULT_PASSWORD | cut -d'=' -f2")
+ail_email=$(lxc exec "$AIL_CONTAINER" -- bash -c "grep '^email=' /home/ail/bitranger-scanner/DEFAULT_PASSWORD | cut -d'=' -f2")
+ail_password=$(lxc exec "$AIL_CONTAINER" -- bash -c "grep '^password=' /home/ail/bitranger-scanner/DEFAULT_PASSWORD | cut -d'=' -f2")
+ail_API_Key=$(lxc exec "$AIL_CONTAINER" -- bash -c "grep '^API_Key=' /home/ail/bitranger-scanner/DEFAULT_PASSWORD | cut -d'=' -f2")
 if $LACUS; then
     lacus_ip=$(lxc list "$LACUS_CONTAINER" --format=json | jq -r '.[0].state.network.eth0.addresses[] | select(.family=="inet").address')
 fi
